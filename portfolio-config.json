@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "resume": {
+    "version": "2026-10",
+    "sourceFile": "RaviAmazon-2.pdf",
+    "updatedAt": "2026-10-20"
+  },
+  "profile": {
+    "name": "Ravi Singh",
+    "headline": "Software Development Engineer",
+    "location": "India",
+    "email": "i.ravi0a129@gmail.com",
+    "intro": "I’m a software engineer working across payments, data platforms, and developer tools. I like making complex systems faster, safer, and easier to operate.",
+    "about": "From reducing payment latency at Amazon to building data workflows at Oracle, I enjoy taking complicated systems and making them more dependable. Outside of work, I’m exploring local-first AI with SearchLocal: a private desktop search agent grounded in the files you already own.",
+    "links": []
+  },
+  "experience": [
+    {
+      "id": "amazon-sde",
+      "company": "Amazon",
+      "title": "Software Development Engineer",
+      "startDate": "2025-04",
+      "endDate": null,
+      "highlights": [
+        { "text": "Led a low-latency optimistic fulfillment path for Tier-1 payment flows, reducing transaction latency from 24.7s to 8.6s.", "metric": { "label": "Transaction latency reduction", "value": 65, "unit": "%" }, "tags": ["Payments", "Latency", "Backend"] },
+        { "text": "Led 2FA suppression for Add Money and Pay Orders across BOSON and DPOD orders, avoiding redundant authentication after primary flight transaction verification.", "tags": ["Payments", "Authentication"] },
+        { "text": "Built configurable kill switches for optimistic fulfillment, supporting real-time policy enforcement, safeguards, rollback, and on-call awareness.", "tags": ["Reliability", "Operations"] },
+        { "text": "Contributed to a plugin-based digital ordering pipeline for UPI orders and configurable AWS resources, reducing fulfillment latency to 6 seconds.", "tags": ["UPI", "AWS", "Latency"] },
+        { "text": "Led backend integration of the simplified Thunderbolt payment page for Amazon NOW customers.", "tags": ["Payments", "Backend"] },
+        { "text": "Contributed fixes for the Bento Theme and Amrut app to improve customer experience.", "tags": ["Mobile", "Quality"] }
+      ]
+    },
+    {
+      "id": "oracle-developer",
+      "company": "Oracle",
+      "title": "Software Developer",
+      "startDate": "2023-05",
+      "endDate": "2025-04",
+      "highlights": [
+        { "text": "Designed modules that generate YAML from table metadata for data streaming and replication, cutting metadata extraction time by 60% and removing an Oracle Data Integrator dependency.", "metric": { "label": "Metadata extraction time reduction", "value": 60, "unit": "%" }, "tags": ["Data Engineering", "YAML"] },
+        { "text": "Implemented PySpark APIs for deduplication and compaction; added unit tests for four housekeeping tasks including vacuuming and garbage collection.", "tags": ["PySpark", "Data Quality"] },
+        { "text": "Automated ODP configuration updates by embedding required parameters, improving replication workflow efficiency and accuracy by over 50%.", "metric": { "label": "Workflow efficiency improvement", "value": 50, "unit": "%+" }, "tags": ["Automation", "Data Engineering"] },
+        { "text": "Migrated 3,800 table definitions from Oracle Data Integrator to YAML for CDP and GCW environments.", "metric": { "label": "Table definitions migrated", "value": 3800, "unit": "tables" }, "tags": ["Migration", "YAML"] }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "searchlocal",
+      "name": "SearchLocal",
+      "type": "PERSONAL PROJECT",
+      "date": "IN PROGRESS",
+      "summary": "A local-first Mac search agent that indexes text files into SQLite FTS5 and retrieves useful snippets for natural-language questions.",
+      "details": "SearchLocal uses a local language model through Ollama to generate answers grounded in retrieved file context, with cited paths and source chunks.",
+      "tags": ["Python", "SQLite FTS5", "Ollama", "Local AI"],
+      "url": "",
+      "relatedExperience": []
+    }
+  ],
+  "skills": {
+    "languages": ["Java", "C++", "TypeScript", "SQL", "Groovy"],
+    "frameworksAndLibraries": ["Spring Boot", "PySpark", "Hibernate", "Thymeleaf", "Bootstrap", "NumPy", "Pandas", "scikit-learn"],
+    "coursework": ["Data Structures and Algorithms", "Operating Systems", "Network Theory", "Database Management Systems", "Object-Oriented Programming"]
+  },
+  "education": [
+    { "degree": "B.E. in Electronics and Instrumentation Engineering", "institution": "Jadavpur University", "location": "Kolkata", "startDate": "2019-06", "endDate": "2023-05", "grade": "8.2/10" }
+  ],
+  "certifications": [
+    "Programming in Modern C++ — NPTEL",
+    "The Joy of Computing Using Python — NPTEL",
+    "Database and Management Systems — NPTEL",
+    "SQL — HackerRank"
+  ],
+  "questions": [
+    "What did you work on at Amazon?",
+    "How did you improve payment latency?",
+    "Tell me about your data engineering experience.",
+    "What is SearchLocal?"
+  ]
+}

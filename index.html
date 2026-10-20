@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f1eee6" />
+    <meta name="description" content="Ravi Singh — software engineer building resilient systems and thoughtful developer tools." />
+    <title>Ravi Singh — Engineer & builder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="wordmark" href="#home" aria-label="Ravi Singh, home"><span class="wordmark-dot"></span><span data-profile="name">Ravi Singh</span><span class="wordmark-suffix">/ FIELD NOTES</span></a>
+        <nav class="top-nav" aria-label="Main navigation">
+          <a href="#work">Selected work</a><a href="#about">About</a>
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme">◐ <span>Theme</span></button>
+        </nav>
+      </header>
+
+      <main id="home">
+        <section class="hero-grid" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="status-dot"></span> <span id="headline">SOFTWARE ENGINEER</span> <span class="eyebrow-divider">·</span> <span id="location">INDIA</span></p>
+            <h1 id="hero-title">I build systems<br />that <em>move things</em><br />forward.</h1>
+            <p class="hero-intro" id="intro"></p>
+            <div class="hero-actions"><a class="button button-dark" href="#work">Explore my work <span>↘</span></a><a class="text-link" id="emailLink" href="mailto:">Get in touch <span>↗</span></a></div>
+            <div class="hero-index"><span>01 — 04</span><span>SCROLL TO EXPLORE</span><span>↘</span></div>
+          </div>
+          <div class="sky-panel" aria-label="Interactive map of selected work">
+            <div class="sky-meta"><span>WORK CONSTELLATION</span><span id="skyCount">00 SYSTEMS</span></div>
+            <canvas id="constellation" aria-hidden="true"></canvas>
+            <div class="sky-caption"><span class="caption-line"></span><span>Each point is a problem<br />worth thinking about.</span><span class="north-star">✳</span></div>
+            <div class="sky-hint">HOVER A STAR TO TRACE THE WORK</div>
+          </div>
+        </section>
+
+        <section class="ask-section" aria-labelledby="ask-title">
+          <div class="ask-heading"><div><p class="eyebrow">A BETTER WAY TO BROWSE</p><h2 id="ask-title">Ask me about <em>the work.</em></h2></div><p class="ask-aside">Skip the scroll. Ask a question and I’ll point you to the most relevant work.</p></div>
+          <form class="ask-form" id="askForm"><span class="prompt-mark">↳</span><label class="sr-only" for="questionInput">Ask about Ravi's work</label><input id="questionInput" autocomplete="off" placeholder="Try “What have you built at Amazon?”" /><button type="submit" aria-label="Ask question">↗</button></form>
+          <div class="suggestions" id="suggestions"></div>
+          <div class="answer-panel" id="answerPanel" aria-live="polite" hidden></div>
+        </section>
+
+        <section class="work-section" id="work">
+          <div class="section-heading"><div><p class="eyebrow">A FEW THINGS I’VE WORKED ON</p><h2>Selected <em>work.</em></h2></div><span class="section-count" id="projectCount">04 PROJECTS</span></div>
+          <div class="project-grid" id="projectGrid"></div>
+          <div class="experience-heading"><p class="eyebrow">WHERE I’VE MADE AN IMPACT</p><h2>Experience <em>so far.</em></h2></div>
+          <div class="experience-list" id="experienceList"></div>
+        </section>
+
+        <section class="about-section" id="about">
+          <div><p class="eyebrow">THE SHORT VERSION</p><h2>Curious by default.<br /><em>Grounded in systems.</em></h2></div>
+          <div class="about-details"><p id="aboutCopy"></p><div class="skill-block"><span class="skill-label">TOOLS I REACH FOR</span><div class="skill-list" id="skillList"></div></div><div class="credentials" id="credentials"></div></div>
+        </section>
+      </main>
+
+      <footer class="footer"><a class="wordmark" href="#home"><span class="wordmark-dot"></span><span data-profile="name">Ravi Singh</span></a><span>BUILT WITH INTENTION · <span id="year"></span></span><a id="footerEmail" href="mailto:">SAY HELLO ↗</a></footer>
+    </div>
+    <div class="toast" id="toast" role="status"></div>
+  </body>
+</html>
