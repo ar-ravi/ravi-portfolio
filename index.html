@@ -9,9 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=2" />
-    <script defer src="app.js?v=2"></script>
-    <script defer src="garden.js?v=2"></script>
+    <link rel="stylesheet" href="styles.css?v=3" />
+    <script defer src="app.js?v=3"></script>
+    <script defer src="game.js?v=1"></script>
   </head>
   <body>
     <div class="app-shell">
@@ -54,27 +54,30 @@
           <div class="experience-list" id="experienceList"></div>
         </section>
 
-        <section class="garden-section" aria-labelledby="garden-title">
-          <div class="garden-heading">
-            <div><p class="eyebrow">A SMALL INTERACTIVE STUDY</p><h2 id="garden-title">The garden, <em>after Monet.</em></h2></div>
-            <p class="garden-intro">A pond made from color, light, and a few curious visitors. Paint the water, or select a lily to find a project.</p>
+        <section class="build-section" aria-labelledby="build-title">
+          <div class="build-heading">
+            <div><p class="eyebrow">BUILD · LEARN · SHIP</p><h2 id="build-title">A little build <em>loop.</em></h2></div>
+            <p class="build-intro">Ideas get better when you keep moving. Collect the tools, grow your pipeline, and see how long you can keep shipping.</p>
           </div>
-          <div class="garden-frame">
-            <div class="garden-topline"><span>WATER GARDEN NO. 01</span><span>AN ORIGINAL, GENERATIVE CANVAS</span></div>
-            <div class="garden-canvas-wrap">
-              <canvas id="gardenCanvas" role="img" aria-label="An original impressionist water garden. Drag across the pond to paint brushstrokes; click the water lily to reveal a project." aria-describedby="gardenInstructions"></canvas>
-              <span class="garden-signature" aria-hidden="true">R. Singh · étude</span>
+          <div class="build-game-layout">
+            <aside class="build-side build-story">
+              <span class="build-label">THE LOOP</span>
+              <ol class="build-steps"><li><b>01</b><span>Start with an idea</span></li><li><b>02</b><span>Connect models + tools</span></li><li><b>03</b><span>Ship, learn, repeat</span></li></ol>
+              <div class="build-best"><span class="build-label">PERSONAL BEST</span><strong id="gameBest">00</strong><small>tool calls in a row</small></div>
+            </aside>
+            <div class="game-console">
+              <div class="game-console-head"><span>BUILD LOOP <i class="game-live-dot"></i></span><span id="gameLevel">READY</span></div>
+              <canvas id="buildCanvas" tabindex="0" role="img" aria-label="Build Loop snake game. Use arrow keys or WASD to collect tool tokens and avoid the walls and your own trail." aria-describedby="gameInstructions"></canvas>
+              <div class="game-hud"><span>SCORE <strong id="gameScore">00</strong></span><span id="gameStatus" role="status" aria-live="polite">Ready when you are</span><button id="gameStart" type="button">Start building <span aria-hidden="true">↗</span></button></div>
+              <p class="game-instructions" id="gameInstructions">Arrow keys / WASD to move · Space to pause · Collect tokens, don’t hit your own pipeline.</p>
+              <div class="game-touch-controls" aria-label="Touch direction controls"><button type="button" data-direction="up" aria-label="Move up">↑</button><div><button type="button" data-direction="left" aria-label="Move left">←</button><button type="button" data-direction="down" aria-label="Move down">↓</button><button type="button" data-direction="right" aria-label="Move right">→</button></div></div>
             </div>
-            <div class="garden-controls">
-              <div class="garden-palettes" role="group" aria-label="Choose brush palette">
-                <button class="garden-palette is-active" type="button" data-palette="pond" aria-pressed="true"><span class="palette-swatch palette-pond"></span><span>Waterlilies</span></button>
-                <button class="garden-palette" type="button" data-palette="morning" aria-pressed="false"><span class="palette-swatch palette-morning"></span><span>Morning light</span></button>
-                <button class="garden-palette" type="button" data-palette="evening" aria-pressed="false"><span class="palette-swatch palette-evening"></span><span>Evening bloom</span></button>
-              </div>
-              <button class="garden-reset" id="gardenReset" type="button">Clear my marks <span aria-hidden="true">↺</span></button>
-            </div>
-            <div class="garden-bottomline"><p id="gardenInstructions">Drag or touch the water to add paint. Select a project lily, or use the links below.</p><div class="garden-projects" id="gardenProjects" aria-label="Projects in the garden"></div></div>
-            <div class="garden-selection" id="gardenSelection" aria-live="polite" hidden></div>
+            <aside class="build-side build-toolbox">
+              <span class="build-label">TOOLS IN THE LOOP</span>
+              <p>Small, useful pieces that turn an idea into something real.</p>
+              <div class="tool-stack"><span>Python</span><span>SQLite FTS5</span><span>Ollama</span><span>MCP + agents</span><span>AWS</span><span>TypeScript</span></div>
+              <div class="build-note"><span aria-hidden="true">✳</span><span>Curiosity is the feature. Good systems make it useful.</span></div>
+            </aside>
           </div>
         </section>
 

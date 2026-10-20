@@ -17,7 +17,7 @@ Then open <http://localhost:8000>.
 
 The workflow at `.github/workflows/deploy-pages.yml` publishes the static site whenever a commit reaches `main`. In the repository, open **Settings → Pages**, set **Build and deployment → Source** to **GitHub Actions**, then push to `main` (or run the workflow from the Actions tab). GitHub will show the live URL in the deployment job summary.
 
-The Monet-inspired water garden is original canvas art drawn in `garden.js`; it uses no remote artwork, model API, or paid service. Visitors can choose a palette, paint strokes, and select a project lily. Artwork is generated in the browser and is not saved or sent anywhere.
+The Build Loop Snake game is implemented in `game.js` with canvas and browser APIs. It uses no external game engine, model API, or paid service. Visitors can play with a keyboard or touch controls; only the personal-best score is saved in local browser storage.
 
 ## Updating from a new resume
 
