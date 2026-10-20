@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
     <script defer src="app.js"></script>
+    <script defer src="garden.js"></script>
   </head>
   <body>
     <div class="app-shell">
@@ -51,6 +52,30 @@
           <div class="project-grid" id="projectGrid"></div>
           <div class="experience-heading"><p class="eyebrow">WHERE I’VE MADE AN IMPACT</p><h2>Experience <em>so far.</em></h2></div>
           <div class="experience-list" id="experienceList"></div>
+        </section>
+
+        <section class="garden-section" aria-labelledby="garden-title">
+          <div class="garden-heading">
+            <div><p class="eyebrow">A SMALL INTERACTIVE STUDY</p><h2 id="garden-title">The garden, <em>after Monet.</em></h2></div>
+            <p class="garden-intro">A pond made from color, light, and a few curious visitors. Paint the water, or select a lily to find a project.</p>
+          </div>
+          <div class="garden-frame">
+            <div class="garden-topline"><span>WATER GARDEN NO. 01</span><span>AN ORIGINAL, GENERATIVE CANVAS</span></div>
+            <div class="garden-canvas-wrap">
+              <canvas id="gardenCanvas" role="img" aria-label="An original impressionist water garden. Drag across the pond to paint brushstrokes; click the water lily to reveal a project." aria-describedby="gardenInstructions"></canvas>
+              <span class="garden-signature" aria-hidden="true">R. Singh · étude</span>
+            </div>
+            <div class="garden-controls">
+              <div class="garden-palettes" role="group" aria-label="Choose brush palette">
+                <button class="garden-palette is-active" type="button" data-palette="pond" aria-pressed="true"><span class="palette-swatch palette-pond"></span><span>Waterlilies</span></button>
+                <button class="garden-palette" type="button" data-palette="morning" aria-pressed="false"><span class="palette-swatch palette-morning"></span><span>Morning light</span></button>
+                <button class="garden-palette" type="button" data-palette="evening" aria-pressed="false"><span class="palette-swatch palette-evening"></span><span>Evening bloom</span></button>
+              </div>
+              <button class="garden-reset" id="gardenReset" type="button">Clear my marks <span aria-hidden="true">↺</span></button>
+            </div>
+            <div class="garden-bottomline"><p id="gardenInstructions">Drag or touch the water to add paint. Select a project lily, or use the links below.</p><div class="garden-projects" id="gardenProjects" aria-label="Projects in the garden"></div></div>
+            <div class="garden-selection" id="gardenSelection" aria-live="polite" hidden></div>
+          </div>
         </section>
 
         <section class="about-section" id="about">

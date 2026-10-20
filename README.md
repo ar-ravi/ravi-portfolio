@@ -17,6 +17,8 @@ Then open <http://localhost:8000>.
 
 The workflow at `.github/workflows/deploy-pages.yml` publishes the static site whenever a commit reaches `main`. In the repository, open **Settings → Pages**, set **Build and deployment → Source** to **GitHub Actions**, then push to `main` (or run the workflow from the Actions tab). GitHub will show the live URL in the deployment job summary.
 
+The Monet-inspired water garden is original canvas art drawn in `garden.js`; it uses no remote artwork, model API, or paid service. Visitors can choose a palette, paint strokes, and select a project lily. Artwork is generated in the browser and is not saved or sent anywhere.
+
 ## Updating from a new resume
 
 1. Keep a dated copy of the new resume outside the public site if you want a private source archive.

@@ -13,6 +13,7 @@ async function start() {
     validateConfig(config);
     render();
     initCanvas();
+    if (typeof window.initGarden === "function") window.initGarden(config);
     bindEvents();
   } catch (error) {
     document.querySelector("main").innerHTML = `<section class="error-state"><p class="eyebrow">PORTFOLIO CONFIGURATION</p><h1>Couldn’t load the profile.</h1><p>${escapeHtml(error.message)}. Open this site through a local web server and check portfolio-config.json.</p></section>`;
