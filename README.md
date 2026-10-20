@@ -13,6 +13,10 @@ python3 -m http.server 8000
 
 Then open <http://localhost:8000>.
 
+## Deploy with GitHub Pages
+
+The workflow at `.github/workflows/deploy-pages.yml` publishes the static site whenever a commit reaches `main`. In the repository, open **Settings → Pages**, set **Build and deployment → Source** to **GitHub Actions**, then push to `main` (or run the workflow from the Actions tab). GitHub will show the live URL in the deployment job summary.
+
 ## Updating from a new resume
 
 1. Keep a dated copy of the new resume outside the public site if you want a private source archive.
