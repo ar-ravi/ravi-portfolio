@@ -9,9 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=3" />
-    <script defer src="app.js?v=3"></script>
-    <script defer src="game.js?v=1"></script>
+    <link rel="stylesheet" href="styles.css?v=4" />
+    <script defer src="game.js?v=3"></script>
+    <script defer src="app.js?v=4"></script>
   </head>
   <body>
     <div class="app-shell">
@@ -32,11 +32,17 @@
             <div class="hero-actions"><a class="button button-dark" href="#work">Explore my work <span>↘</span></a><a class="text-link" id="emailLink" href="mailto:">Get in touch <span>↗</span></a></div>
             <div class="hero-index"><span>01 — 04</span><span>SCROLL TO EXPLORE</span><span>↘</span></div>
           </div>
-          <div class="sky-panel" aria-label="Interactive map of selected work">
-            <div class="sky-meta"><span>WORK CONSTELLATION</span><span id="skyCount">00 SYSTEMS</span></div>
-            <canvas id="constellation" aria-hidden="true"></canvas>
-            <div class="sky-caption"><span class="caption-line"></span><span>Each point is a problem<br />worth thinking about.</span><span class="north-star">✳</span></div>
-            <div class="sky-hint">HOVER A STAR TO TRACE THE WORK</div>
+          <div class="hero-game" aria-labelledby="build-title">
+            <div class="hero-game-meta"><span>INTERACTIVE / 001</span><span>PLAY A ROUND ↘</span></div>
+            <div class="hero-game-heading"><h2 id="build-title">Build Loop <em>— 01</em></h2><p>Idea → AI → tools → shipped.</p></div>
+            <div class="game-console">
+              <div class="game-console-head"><span>BUILD LOOP <i class="game-live-dot"></i></span><span id="gameLevel">READY</span></div>
+              <canvas id="buildCanvas" tabindex="0" role="img" aria-label="Build Loop snake game. Use arrow keys or WASD to collect tool tokens and avoid the walls and your own trail." aria-describedby="gameInstructions"></canvas>
+              <div class="game-hud"><span>SCORE <strong id="gameScore">00</strong></span><span class="game-best-inline">BEST <strong id="gameBest">00</strong></span><span id="gameStatus" role="status" aria-live="polite">Ready when you are</span><button id="gameStart" type="button">Start building <span aria-hidden="true">↗</span></button></div>
+              <p class="game-instructions" id="gameInstructions">Arrow keys / WASD · Space to pause · Collect the tokens, keep the pipeline moving.</p>
+              <div class="game-touch-controls" aria-label="Touch direction controls"><button type="button" data-direction="up" aria-label="Move up">↑</button><div><button type="button" data-direction="left" aria-label="Move left">←</button><button type="button" data-direction="down" aria-label="Move down">↓</button><button type="button" data-direction="right" aria-label="Move right">→</button></div></div>
+            </div>
+            <div class="hero-tool-stack"><span>PYTHON</span><span>SQLITE FTS5</span><span>OLLAMA</span><span>MCP + AGENTS</span><span>AWS</span><span>TYPESCRIPT</span></div>
           </div>
         </section>
 
@@ -52,33 +58,6 @@
           <div class="project-grid" id="projectGrid"></div>
           <div class="experience-heading"><p class="eyebrow">WHERE I’VE MADE AN IMPACT</p><h2>Experience <em>so far.</em></h2></div>
           <div class="experience-list" id="experienceList"></div>
-        </section>
-
-        <section class="build-section" aria-labelledby="build-title">
-          <div class="build-heading">
-            <div><p class="eyebrow">BUILD · LEARN · SHIP</p><h2 id="build-title">A little build <em>loop.</em></h2></div>
-            <p class="build-intro">Ideas get better when you keep moving. Collect the tools, grow your pipeline, and see how long you can keep shipping.</p>
-          </div>
-          <div class="build-game-layout">
-            <aside class="build-side build-story">
-              <span class="build-label">THE LOOP</span>
-              <ol class="build-steps"><li><b>01</b><span>Start with an idea</span></li><li><b>02</b><span>Connect models + tools</span></li><li><b>03</b><span>Ship, learn, repeat</span></li></ol>
-              <div class="build-best"><span class="build-label">PERSONAL BEST</span><strong id="gameBest">00</strong><small>tool calls in a row</small></div>
-            </aside>
-            <div class="game-console">
-              <div class="game-console-head"><span>BUILD LOOP <i class="game-live-dot"></i></span><span id="gameLevel">READY</span></div>
-              <canvas id="buildCanvas" tabindex="0" role="img" aria-label="Build Loop snake game. Use arrow keys or WASD to collect tool tokens and avoid the walls and your own trail." aria-describedby="gameInstructions"></canvas>
-              <div class="game-hud"><span>SCORE <strong id="gameScore">00</strong></span><span id="gameStatus" role="status" aria-live="polite">Ready when you are</span><button id="gameStart" type="button">Start building <span aria-hidden="true">↗</span></button></div>
-              <p class="game-instructions" id="gameInstructions">Arrow keys / WASD to move · Space to pause · Collect tokens, don’t hit your own pipeline.</p>
-              <div class="game-touch-controls" aria-label="Touch direction controls"><button type="button" data-direction="up" aria-label="Move up">↑</button><div><button type="button" data-direction="left" aria-label="Move left">←</button><button type="button" data-direction="down" aria-label="Move down">↓</button><button type="button" data-direction="right" aria-label="Move right">→</button></div></div>
-            </div>
-            <aside class="build-side build-toolbox">
-              <span class="build-label">TOOLS IN THE LOOP</span>
-              <p>Small, useful pieces that turn an idea into something real.</p>
-              <div class="tool-stack"><span>Python</span><span>SQLite FTS5</span><span>Ollama</span><span>MCP + agents</span><span>AWS</span><span>TypeScript</span></div>
-              <div class="build-note"><span aria-hidden="true">✳</span><span>Curiosity is the feature. Good systems make it useful.</span></div>
-            </aside>
-          </div>
         </section>
 
         <section class="about-section" id="about">

@@ -21,7 +21,7 @@
   let best = 0;
 
   window.initBuildGame = function initBuildGame() {
-    section = document.querySelector(".build-section");
+    section = document.querySelector(".hero-game");
     canvas = document.querySelector("#buildCanvas");
     if (!section || !canvas) return;
     ctx = canvas.getContext("2d");

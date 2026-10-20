@@ -38,7 +38,6 @@ function render() {
   $("#intro").textContent = p.intro || "Software engineer building thoughtful, reliable systems.";
   $("#aboutCopy").textContent = p.about || p.intro || "";
   for (const id of ["emailLink", "footerEmail"]) { const link = $(`#${id}`); link.href = `mailto:${p.email}`; }
-  $("#skyCount").textContent = `${String(config.projects.length + config.experience.length).padStart(2,"0")} SYSTEMS`;
   $("#projectCount").textContent = `${String(config.projects.length).padStart(2,"0")} PROJECT${config.projects.length === 1 ? "" : "S"}`;
   $("#year").textContent = new Date().getFullYear();
   $("#projectGrid").innerHTML = config.projects.map((project, index) => `<article class="project-card" id="project-${safeId(project.id)}"><div><div class="project-top"><span class="project-type">${escapeHtml(project.type || "PROJECT")}</span><span class="project-index">0${index + 1}</span></div><h3>${escapeHtml(project.name)}</h3><p>${escapeHtml(project.summary || "")}</p></div><div class="project-footer"><div class="project-tags">${(project.tags || []).map(tag => `<span>${escapeHtml(tag)}</span>`).join("")}</div>${project.url ? `<a class="project-arrow" href="${safeUrl(project.url)}" target="_blank" rel="noreferrer" aria-label="Open ${escapeHtml(project.name)}">↗</a>` : "<span class=\"project-arrow\">✳</span>"}</div></article>`).join("");
@@ -56,9 +55,11 @@ function bindEvents() {
   $("#suggestions").addEventListener("click", event => { const button = event.target.closest("button"); if (!button) return; $("#questionInput").value = button.textContent; answerQuestion(button.textContent); });
   $("#themeToggle").addEventListener("click", () => { const dark = document.body.classList.toggle("dark"); $("#themeToggle").setAttribute("aria-label", dark ? "Switch to light theme" : "Switch to dark theme"); if (stars.length) drawStars(); });
   const canvas = $("#constellation");
-  canvas.addEventListener("pointermove", event => { const rect = canvas.getBoundingClientRect(); const x = event.clientX - rect.left, y = event.clientY - rect.top; selectedStar = stars.find(star => Math.hypot(star.x - x, star.y - y) < 18) || null; canvas.style.cursor = selectedStar ? "pointer" : "default"; drawStars(); });
-  canvas.addEventListener("pointerleave", () => { selectedStar = null; drawStars(); });
-  canvas.addEventListener("click", event => { const rect = canvas.getBoundingClientRect(); const star = stars.find(s => Math.hypot(s.x - (event.clientX - rect.left), s.y - (event.clientY - rect.top)) < 18); if (star) { const target = star.kind === "project" ? `#project-${safeId(star.item.id)}` : `#experience-${safeId(star.item.id)}`; document.querySelector(target)?.scrollIntoView({ behavior: "smooth" }); } });
+  if (canvas) {
+    canvas.addEventListener("pointermove", event => { const rect = canvas.getBoundingClientRect(); const x = event.clientX - rect.left, y = event.clientY - rect.top; selectedStar = stars.find(star => Math.hypot(star.x - x, star.y - y) < 18) || null; canvas.style.cursor = selectedStar ? "pointer" : "default"; drawStars(); });
+    canvas.addEventListener("pointerleave", () => { selectedStar = null; drawStars(); });
+    canvas.addEventListener("click", event => { const rect = canvas.getBoundingClientRect(); const star = stars.find(s => Math.hypot(s.x - (event.clientX - rect.left), s.y - (event.clientY - rect.top)) < 18); if (star) { const target = star.kind === "project" ? `#project-${safeId(star.item.id)}` : `#experience-${safeId(star.item.id)}`; document.querySelector(target)?.scrollIntoView({ behavior: "smooth" }); } });
+  }
   if (window.matchMedia) window.matchMedia("(prefers-reduced-motion: reduce)").addEventListener("change", drawStars);
 }
 
@@ -84,6 +85,7 @@ function answerQuestion(raw) {
 
 function initCanvas() {
   const canvas = $("#constellation");
+  if (!canvas) return;
   resizeObserver = new ResizeObserver(() => { const rect = canvas.getBoundingClientRect(), ratio = window.devicePixelRatio || 1; canvas.width = Math.round(rect.width * ratio); canvas.height = Math.round(rect.height * ratio); canvas.getContext("2d").setTransform(ratio,0,0,ratio,0,0); makeStars(rect.width, rect.height); drawStars(); });
   resizeObserver.observe(canvas);
 }
