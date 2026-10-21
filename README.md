@@ -1,6 +1,6 @@
 # Ravi Singh — Portfolio
 
-A responsive, resume-driven portfolio with a hand-drawn work constellation, local question matching, and light/dark themes. The UI is separate from the content: edit `portfolio-config.json` when your resume changes.
+A responsive, retro-styled portfolio with resume-driven content, local question search, light/dark themes, and a small canvas runner. Edit `portfolio-config.json` when your resume changes.
 
 **Live portfolio:** <https://ar-ravi.github.io/ravi-portfolio/>
 
@@ -9,7 +9,8 @@ A responsive, resume-driven portfolio with a hand-drawn work constellation, loca
 This version has no package installation or API-key requirement. Because the page loads its JSON file with `fetch`, serve the folder over HTTP instead of opening `index.html` directly.
 
 ```sh
-cd /Users/ravi/Desktop/Workspace/Portfolio
+git clone https://github.com/ar-ravi/ravi-portfolio.git
+cd ravi-portfolio
 python3 -m http.server 8000
 ```
 
@@ -19,7 +20,15 @@ Then open <http://localhost:8000>.
 
 The workflow at `.github/workflows/deploy-pages.yml` publishes the static site whenever a commit reaches `main`. In the repository, open **Settings → Pages**, set **Build and deployment → Source** to **GitHub Actions**, then push to `main` (or run the workflow from the Actions tab). GitHub will show the live URL in the deployment job summary.
 
-Dino Run is implemented in `game.js` with canvas and browser APIs. It uses no external game engine, model API, or paid service. Visitors can jump and duck with the keyboard or use the touch jump button; only the personal-best score is saved in local browser storage.
+## Dino Run
+
+The small runner in the hero is implemented in `game.js` with canvas and browser APIs. It needs no external game engine, model API, or paid service.
+
+- Press **Space** or **↑** to jump over cacti.
+- Hold **↓** to duck under flying obstacles.
+- Press **P** or use the on-screen button to pause and resume.
+- On touch screens, use **Jump**. Use **Start running** or **Run again** to begin another round.
+- The score tracks distance; the best score is saved in this browser's local storage.
 
 ## Updating from a new resume
 
