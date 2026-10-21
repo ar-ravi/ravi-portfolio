@@ -55,7 +55,50 @@
       "tags": ["Python", "SQLite FTS5", "Ollama", "Local AI"],
       "url": "",
       "relatedExperience": []
+    },
+    {
+      "id": "jobsearch-assistant",
+      "name": "JobSearch-Assistant",
+      "type": "PERSONAL PROJECT",
+      "date": "IN PROGRESS",
+      "summary": "A local job-search workspace with an Excel-backed company watchlist, application pipeline, configurable follow-up reminders, and per-role activity timelines. Its Search Copilot uses Ollama models with read-only MCP tools to answer questions about tracked companies, applications, and follow-ups.",
+      "details": "Built with Python, Ollama, and MCP. The model runs locally; its MCP server exposes read-only tracker tools, so the copilot can retrieve context without changing application records. The Excel workbook remains editable and importable as the tracker’s local persistence layer.",
+      "tags": ["Ollama", "MCP tools", "Local LLM", "Python", "Excel"],
+      "url": "https://github.com/ar-ravi/JobSearch-Assistant",
+      "relatedExperience": []
     }
+  ],
+  "currentlyReading": [
+    {
+      "type": "AI PAPER",
+      "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "author": "Shunyu Yao et al. · 2022",
+      "note": "A foundational look at language models reasoning while choosing and using tools.",
+      "url": "https://arxiv.org/abs/2210.03629"
+    },
+    {
+      "type": "AI PAPER",
+      "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "author": "Patrick Lewis et al. · 2020",
+      "note": "The original RAG paper, combining a language model with retrieved external knowledge.",
+      "url": "https://arxiv.org/abs/2005.11401"
+    },
+    {
+      "type": "ENGINEERING BLOG",
+      "title": "Effective context engineering for AI agents",
+      "author": "Anthropic · 2025",
+      "note": "Practical ideas for curating the context available to an agent across a task.",
+      "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents"
+    },
+    {
+      "type": "ENGINEERING BLOG",
+      "title": "Demystifying evals for AI agents",
+      "author": "Anthropic · 2026",
+      "note": "Ways to evaluate tool-using, multi-step agents with meaningful checks.",
+      "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents"
+    },
+    { "type": "FICTION", "title": "Jane Eyre", "author": "Charlotte Brontë" },
+    { "type": "FICTION", "title": "White Nights", "author": "Fyodor Dostoevsky" }
   ],
   "skills": {
     "languages": ["Java", "C++", "TypeScript", "SQL", "Groovy"],
