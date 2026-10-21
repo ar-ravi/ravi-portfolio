@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=16" />
-    <script defer src="game.js?v=3"></script>
+    <link rel="stylesheet" href="styles.css?v=18" />
+    <script defer src="game.js?v=5"></script>
     <script defer src="app.js?v=8"></script>
   </head>
   <body>
@@ -34,13 +34,13 @@
           </div>
           <div class="hero-game" aria-labelledby="build-title">
             <div class="hero-game-meta"><span>INTERACTIVE / 001</span><span>PLAY A ROUND ↘</span></div>
-            <div class="hero-game-heading"><h2 id="build-title">Build Loop <em>— 01</em></h2><p>Idea → AI → tools → shipped.</p></div>
+            <div class="hero-game-heading"><h2 id="build-title">Dino Run <em>— 01</em></h2><p>A tiny run through the retro ages.</p></div>
             <div class="game-console">
-              <div class="game-console-head"><span>BUILD LOOP <i class="game-live-dot"></i></span><span id="gameLevel">READY</span></div>
-              <canvas id="buildCanvas" tabindex="0" role="img" aria-label="Build Loop snake game. Use arrow keys or WASD to collect tool tokens and avoid the walls and your own trail." aria-describedby="gameInstructions"></canvas>
-              <div class="game-hud"><span>SCORE <strong id="gameScore">00</strong></span><span class="game-best-inline">BEST <strong id="gameBest">00</strong></span><span id="gameStatus" role="status" aria-live="polite">Ready when you are</span><button id="gameStart" type="button">Start building <span aria-hidden="true">↗</span></button></div>
-              <p class="game-instructions" id="gameInstructions">Arrow keys / WASD · Space to pause · Collect the tokens, keep the pipeline moving.</p>
-              <div class="game-touch-controls" aria-label="Touch direction controls"><button type="button" data-direction="up" aria-label="Move up">↑</button><div><button type="button" data-direction="left" aria-label="Move left">←</button><button type="button" data-direction="down" aria-label="Move down">↓</button><button type="button" data-direction="right" aria-label="Move right">→</button></div></div>
+              <div class="game-console-head"><span>DINO RUNNER <i class="game-live-dot"></i></span><span id="gameLevel">READY</span></div>
+              <canvas id="buildCanvas" tabindex="0" role="img" aria-label="Dinosaur runner game. Press Space or Up to jump and Down to duck under obstacles." aria-describedby="gameInstructions"></canvas>
+              <div class="game-hud"><span>SCORE <strong id="gameScore">00</strong></span><span class="game-best-inline">BEST <strong id="gameBest">00</strong></span><span id="gameStatus" role="status" aria-live="polite">Ready when you are</span><button id="gameStart" type="button">Start running <span aria-hidden="true">↗</span></button></div>
+              <p class="game-instructions" id="gameInstructions">Space / ↑ to jump · ↓ to duck · P to pause.</p>
+              <div class="game-touch-controls" aria-label="Touch game controls"><button type="button" data-action="jump" aria-label="Jump">JUMP ↑</button></div>
             </div>
             <div class="hero-tool-stack"><span>PYTHON</span><span>SQLITE FTS5</span><span>OLLAMA</span><span>MCP + AGENTS</span><span>AWS</span><span>TYPESCRIPT</span></div>
           </div>

@@ -2,6 +2,8 @@
 
 A responsive, resume-driven portfolio with a hand-drawn work constellation, local question matching, and light/dark themes. The UI is separate from the content: edit `portfolio-config.json` when your resume changes.
 
+**Live portfolio:** <https://ar-ravi.github.io/ravi-portfolio/>
+
 ## Run locally
 
 This version has no package installation or API-key requirement. Because the page loads its JSON file with `fetch`, serve the folder over HTTP instead of opening `index.html` directly.
@@ -17,7 +19,7 @@ Then open <http://localhost:8000>.
 
 The workflow at `.github/workflows/deploy-pages.yml` publishes the static site whenever a commit reaches `main`. In the repository, open **Settings → Pages**, set **Build and deployment → Source** to **GitHub Actions**, then push to `main` (or run the workflow from the Actions tab). GitHub will show the live URL in the deployment job summary.
 
-The Build Loop Snake game is implemented in `game.js` with canvas and browser APIs. It uses no external game engine, model API, or paid service. Visitors can play with a keyboard or touch controls; only the personal-best score is saved in local browser storage.
+Dino Run is implemented in `game.js` with canvas and browser APIs. It uses no external game engine, model API, or paid service. Visitors can jump and duck with the keyboard or use the touch jump button; only the personal-best score is saved in local browser storage.
 
 ## Updating from a new resume
 

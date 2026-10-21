@@ -220,3 +220,23 @@ body.dark .reading-title-link{text-decoration-color:#65675b}
 body.dark .reading-note{color:#c7c8bf}
 @media(max-width:850px){.reading-section{grid-template-columns:1fr;gap:17px}.reading-heading>p:last-child{max-width:unset}}
 @media(max-width:640px){.reading-section{margin-top:34px;padding:27px 0 42px;gap:12px}.reading-item{grid-template-columns:29px minmax(0,1fr);gap:9px;padding:12px 1px}.reading-item-main h4{font-size:17px}.reading-note{font-size:9px}}
+/* Dino Run final palette overrides. */
+.hero-game .game-console{background:#e8e1cf;color:#192235;border:3px solid #384333;box-shadow:inset 0 0 0 2px #f6f1e3,5px 5px 0 #192235}
+.hero-game .game-console:after{display:none}
+.hero-game .game-console-head{color:#2147a6}
+.hero-game #gameLevel{color:#e65335}
+.hero-game #buildCanvas{aspect-ratio:1.72;background:#dce8d4;background-image:linear-gradient(#2147a60b 1px,transparent 1px),linear-gradient(90deg,#2147a60b 1px,transparent 1px);background-size:16px 16px;border:2px solid #192235;image-rendering:pixelated}
+.hero-game .game-hud{color:#41493c}
+.hero-game .game-hud strong{color:#192235}
+.hero-game .game-hud #gameStatus{color:#2147a6}
+.hero-game .game-instructions{color:#5d6057}
+.hero-game #gameStart{background:#c9ec69;color:#192235;border:2px solid #192235;box-shadow:3px 3px 0 #e65335;font-weight:700}
+.hero-game #gameStart:hover{background:#e2fa9a}
+.hero-game .game-touch-controls button{min-width:82px;padding:7px 12px;border:2px solid #192235;border-radius:0;background:#c9ec69;color:#192235;font:700 8px var(--mono);letter-spacing:.08em;box-shadow:2px 2px 0 #e65335;cursor:pointer;touch-action:manipulation}
+.hero-game .game-touch-controls button:active{transform:translate(1px,1px);box-shadow:1px 1px 0 #e65335}
+body.dark .hero-game .game-console{background:#252b31;color:#f3ead6;border-color:#c9ec69;box-shadow:inset 0 0 0 2px #3d4540,5px 5px 0 #e65335}
+body.dark .hero-game .game-console-head,body.dark .hero-game .game-hud #gameStatus{color:#c9ec69}
+body.dark .hero-game .game-hud,body.dark .hero-game .game-instructions{color:#c7c8bf}
+body.dark .hero-game .game-hud strong{color:#f3ead6}
+body.dark .hero-game #buildCanvas{border-color:#c9ec69}
+body.dark .hero-game .game-touch-controls button{border-color:#c9ec69}
